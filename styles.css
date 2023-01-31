@@ -1,0 +1,98 @@
+
+
+body { 
+  background-color: rgb(86, 86, 211); 
+  color: whitesmoke; 
+  font-size: 16px; 
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h1 { font-size: 64px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+h4 { font-size: 20px; }
+h5 { font-size: 15px; float: right;}
+h6 { font-size: 13px; }
+p { margin: 0 0 15px; line-height: 24px; color:#ffffff; }
+a { color: dodgerblue; text-decoration: none; border-bottom: 1px dotted; }
+
+.container { 
+  max-width: 9600px; 
+  height: 1000px;
+  margin: 0 auto; 
+}
+
+
+.tabs {
+  position: relative;
+  /* container change */
+  display: flex;
+  min-height: 300px;
+  border-radius: 8px 8px 0 0;
+  /* anything paste border is cut-off */
+  overflow: hidden;
+}
+/* enlarges tabs */
+.tabby-tab {
+  flex: 100;
+}
+
+.tabby-tab label {
+  display: block;
+  box-sizing: border-box;
+    height: 40px;
+  
+  padding: 10px;
+  text-align: center;
+  background: #312ccb;
+  cursor: crosshair;
+  transition: background 0.5s ease;
+  
+}
+
+.tabby-tab label:hover {
+  /* hover  */
+  background: violet;
+}
+
+.tabby-content {
+  position: absolute;
+  
+  left: 0; bottom: 0; right: 0;
+    top: 40px; 
+  
+  padding: 20px;
+  border-radius: 0 0 8px 8px;
+  background: #553285;
+  /* click tabs transition */
+  transition: 
+    opacity 0.8s ease,
+    transform 0.8s ease   ;
+  
+  
+    opacity: 0;
+    transform: scale(0.10);
+    transform-origin: top left;
+  
+}
+
+.tabby-content img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+/*radio is not shown*/
+.tabby-tab [type=radio] { display: none; }
+[type=radio]:checked ~ label {
+  background: #553285;
+  
+}
+/*content in container shows*/
+[type=radio]:checked ~ label ~ .tabby-content {
+  opacity: 1;
+  /*how enlarge content on container is*/
+   transform: scale(1);
+}
+
+
+
